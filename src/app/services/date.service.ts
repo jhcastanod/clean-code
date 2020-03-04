@@ -8,8 +8,8 @@ export class DateService {
   constructor() { }
 
   minutesToMiliseconds(minutes: number) {
-    const result = minutes * 60000;
+    const miliseconds = minutes * 60000;
 
-    return result;
+    return miliseconds;
   }
 }
