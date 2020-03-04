@@ -4,6 +4,7 @@ import { DateService } from './date.service';
 
 describe('DateService', () => {
   let service: DateService;
+
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.get(DateService);
@@ -14,9 +15,11 @@ describe('DateService', () => {
   });
 
   it('should convert minutes to milliseconds', () => {
-    const milliseconds = 60000;
-    const spy = spyOn(service, 'minutesToMilliseconds').and.returnValue(milliseconds);
+    const milliseconds = service.MINUTE_IN_MILLISECONDS;
+    const expected = 60000;
+
     service.minutesToMilliseconds(1);
-    expect(spy).toHaveBeenCalled();
+
+    expect(expected).toBe(milliseconds);
   });
 });
