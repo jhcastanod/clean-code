@@ -3,10 +3,20 @@ import { TestBed } from '@angular/core/testing';
 import { DateService } from './date.service';
 
 describe('DateService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: DateService;
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.get(DateService);
+  });
 
   it('should be created', () => {
-    const service: DateService = TestBed.get(DateService);
     expect(service).toBeTruthy();
+  });
+
+  it('should convert minutes to milliseconds', () => {
+    const milliseconds = 60000;
+    const spy = spyOn(service, 'minutesToMilliseconds').and.returnValue(milliseconds);
+    service.minutesToMilliseconds(1);
+    expect(spy).toHaveBeenCalled();
   });
 });
