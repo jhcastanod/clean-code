@@ -4,12 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DateService {
+  readonly MINUTE_IN_MILLISECONDS = 60000;
 
-  constructor() { }
+  minutesToMilliseconds(minutes: number): number {
+    const milliseconds = minutes * this.MINUTE_IN_MILLISECONDS;
 
-  minutesToMiliseconds(minutes: number) {
-    const miliseconds = minutes * 60000;
-
-    return miliseconds;
+    return milliseconds;
   }
 }
