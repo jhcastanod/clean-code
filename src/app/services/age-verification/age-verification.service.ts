@@ -7,8 +7,8 @@ import { IUser } from 'src/app/interfaces/user';
 export class AgeVerificationService {
   readonly LEGAL_AGE = 18;
 
-  performAgeValidation({ age, firstName, lastname }: IUser): string {
-    const fullName = `${firstName} ${lastname}`;
+  performAgeValidation({ age, firstName, lastName }: IUser): string {
+    const fullName = `${firstName} ${lastName}`;
     const userHasLegalAge = age >= this.LEGAL_AGE;
 
     if (userHasLegalAge) {
