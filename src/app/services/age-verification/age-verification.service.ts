@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface IUser {
-  age: number;
-  firstName: string;
-  lastname: string;
-}
+import { IUser } from 'src/app/interfaces/user';
 
 @Injectable({
   providedIn: 'root'
