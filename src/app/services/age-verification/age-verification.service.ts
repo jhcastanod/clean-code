@@ -1,16 +1,25 @@
 import { Injectable } from '@angular/core';
 
+interface IUser {
+  age: number;
+  firstName: string;
+  lastname: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AgeVerificationService {
   readonly LEGAL_AGE = 18;
 
-  ageVerification(age: number, firstName: string, lastname: string): string {
-    if (age < this.LEGAL_AGE) {
-      return `${firstName} ${lastname} is a minor`;
-    } else {
-      return `${firstName} ${lastname} is legal age`;
+  performAgeValidation({ age, firstName, lastname }: IUser): string {
+    const fullName = `${firstName} ${lastname}`;
+    const userHasLegalAge = age >= this.LEGAL_AGE;
+
+    if (userHasLegalAge) {
+      return `${fullName} is legal age`;
     }
+
+    return `${fullName} is a minor`;
   }
 }
