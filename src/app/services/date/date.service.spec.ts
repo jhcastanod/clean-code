@@ -15,9 +15,8 @@ describe('DateService', () => {
   });
 
   it('should convert minutes to milliseconds', () => {
-    const expected = 60000;
     const result = service.minutesToMilliseconds(1);
 
-    expect(expected).toBe(result);
+    expect(result).toBe(60000);
   });
 });
