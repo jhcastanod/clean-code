@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
+import { IUser } from 'interfaces/user';
+
 import { AgeVerificationService } from './age-verification.service';
-import { IUser } from 'src/app/interfaces/user';
 
 describe('AgeVerificationService', () => {
   let service: AgeVerificationService;
