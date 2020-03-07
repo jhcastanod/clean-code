@@ -1,0 +1,1 @@
+export const userWithoutAge = { firstName: 'fakeName1', lastName: 'fakeLastName1' };
