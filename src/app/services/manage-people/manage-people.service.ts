@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { IUser } from 'interfaces/user';
-
 import { AgeVerificationService } from 'services/age-verification/age-verification.service';
 
 @Injectable({
