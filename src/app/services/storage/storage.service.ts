@@ -1,29 +1,29 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
-import { Storage } from 'interfaces/storage';
-
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
   localStorage = window.localStorage;
 
-  constructor(private readonly cookieService: CookieService) { }
+  constructor(private readonly cookieService: CookieService) {}
 
   get(value: string): string {
-    if (this.localStorage) {
-      const getValue = localStorage.getItem(value);
+    let cookie: string;
 
-      return getValue;
+    if (this.localStorage) {
+      cookie = localStorage.getItem(value);
+
+      return cookie;
     }
 
-    const getCookie = this.cookieService.get(value);
+    cookie = this.cookieService.get(value);
 
-    return getCookie;
+    return cookie;
   }
 
-  set({ key, value }: Storage) {
+  set(key: string, value: string) {
     if (this.localStorage) {
       localStorage.setItem(key, value);
     }
