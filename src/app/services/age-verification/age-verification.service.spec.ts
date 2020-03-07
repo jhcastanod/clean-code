@@ -33,4 +33,20 @@ describe('AgeVerificationService', () => {
 
     expect(result).toContain('is a minor');
   });
+
+  it('should returns false when age is lowerthen legal age', () => {
+    const userAge = 17;
+
+    const result = service.isLegalAge(userAge);
+
+    expect(result).toBeFalsy();
+  });
+
+  it('should return true when age is equal or greater than legal age', () => {
+    const userAge = 19;
+
+    const result = service.isLegalAge(userAge);
+
+    expect(result).toBeTruthy();
+  });
 });
