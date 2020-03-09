@@ -1,5 +1,5 @@
-import { LocalStorage } from './strategies/local-storage.strategy';
-import { CookieStorage } from './strategies/cookie-storage.strategy';
+import { CookieStorage } from './strategies/cookie-storage/cookie-storage.strategy';
+import { LocalStorage } from './strategies/local-storage/local-storage.strategy';
 
 export const StorageProvider = {
   provide: 'STORAGE',

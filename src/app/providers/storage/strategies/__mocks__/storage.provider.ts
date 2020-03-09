@@ -1,5 +1,7 @@
 export class StorageMockClass {
-  get() { }
+  get() {
+    return 'dummyKey';
+  }
 
   set() { }
 }

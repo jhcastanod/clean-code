@@ -15,6 +15,4 @@ describe('CookieStorage', () => {
   it('should create', () => {
     expect('d').toBeTruthy();
   });
-
-
 })
