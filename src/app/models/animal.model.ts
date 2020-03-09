@@ -7,9 +7,9 @@ export class AnimalModel {
   name: string;
   speed: AnimalSpeed;
 
-  isFromWater(): boolean {
-    const category = this.category === 'water';
+  isFrom(category: AnimalCategory): boolean {
+    const result = this.category === category;
 
-    return category;
+    return result;
   }
 }
