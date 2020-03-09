@@ -1,5 +1,5 @@
 class UserModel {
-  name: string;
-  dataOfBirth: string;
+  birthday: string;
   hobbies: [];
+  name: string;
 }
