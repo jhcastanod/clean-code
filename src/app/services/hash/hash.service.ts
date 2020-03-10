@@ -8,10 +8,10 @@ export class HashService {
     const charactersInArr = value.split('');
 
     // Get its value in base64
-    const encryptString = charactersInArr.map(letter => window.btoa(letter));
+    const encryptedCharacters = charactersInArr.map(letter => window.btoa(letter));
 
-    const joinString = encryptString.join('');
+    const encryptedString = encryptedCharacters.join('');
 
-    return joinString;
+    return encryptedString;
   }
 }
