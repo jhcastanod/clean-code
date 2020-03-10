@@ -16,19 +16,15 @@ describe('Animal Model', () => {
   });
 
   it('should return true if animal is from water', () => {
-    const water = AnimalCategory.water;
-
     model.category = AnimalCategory.water;
-    const result = model.isFrom(water);
+    const result = model.isFrom(AnimalCategory.water);
 
     expect(result).toBeTruthy();
   });
 
   it('should return false if animal is not from water', () => {
-    const air = AnimalCategory.air;
-
     model.category = AnimalCategory.water;
-    const result = model.isFrom(air);
+    const result = model.isFrom(AnimalCategory.air);
 
     expect(result).toBeFalsy();
   });
