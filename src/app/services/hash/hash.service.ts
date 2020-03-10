@@ -5,13 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class HashService {
   encode(value: string): string {
-    // Split string to loop throught it
     const valueSplited = value.split('');
 
     // Get its value in base64
-    const stringEncoded = valueSplited.map((l) => window.btoa(l));
+    const stringEncoded = valueSplited.map(letter => window.btoa(letter));
 
-    // Join all base64 values and return string
     const resultJoined = stringEncoded.join('');
 
     return resultJoined;
