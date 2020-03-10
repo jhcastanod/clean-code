@@ -16,7 +16,7 @@ describe('HashService', () => {
   });
 
   it('should return a string encode', () => {
-    const result = service.encode('hi man');
+    const result = service.encrypt('hi man');
 
     expect(result).toBe('aA==aQ==IA==bQ==YQ==bg==');
   });

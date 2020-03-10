@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HashService {
-  encode(value: string): string {
-    const valueSplited = value.split('');
+  encrypt(value: string): string {
+    const charactersInArr = value.split('');
 
     // Get its value in base64
-    const stringEncoded = valueSplited.map(letter => window.btoa(letter));
+    const encryptString = charactersInArr.map(letter => window.btoa(letter));
 
-    const resultJoined = stringEncoded.join('');
+    const joinString = encryptString.join('');
 
-    return resultJoined;
+    return joinString;
   }
 }
