@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AnimalModel } from './animal.model';
 import { AnimalCategory } from 'enums/animal-category.enum';
+
+import { AnimalModel } from './animal.model';
 
 describe('Animal Model', () => {
   let model: AnimalModel;
