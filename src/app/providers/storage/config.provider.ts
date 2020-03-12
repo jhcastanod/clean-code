@@ -1,9 +1,9 @@
 import { IConfig } from 'interfaces/config';
 
-export const configProvider = {
-  provide: 'configuration',
-  useFactory: ({domain , prefixPath , isHttps}: IConfig): IConfig => {
-    const obj = {domain, prefixPath, isHttps};
+export const urlProvider = {
+  provide: 'CONFIGURATION',
+  useFactory: ({ domain, isHttps, prefixPath }: IConfig): IConfig => {
+    const obj = { domain, isHttps, prefixPath };
 
     return obj;
   }
