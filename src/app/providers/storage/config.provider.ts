@@ -1,7 +1,7 @@
-import { IConfig } from 'interfaces/config';
+import { IUrlConfig } from 'interfaces/config';
 
-export const urlProvider = {
-  provide: 'CONFIGURATION',
+export const configProvider = {
+  provide: 'URL_CONFIG',
   useFactory: ({ domain, isHttps, prefixPath }: IConfig): IConfig => {
     const obj = { domain, isHttps, prefixPath };
 
