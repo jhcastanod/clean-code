@@ -2,13 +2,10 @@ import { IUrlConfig } from 'interfaces/config';
 
 export const UrlConfigProvider = {
   provide: 'URL_CONFIG',
-  useFactory: ({ domain, isHttps, prefixPath }: IUrlConfig): IUrlConfig => {
-    const urlConfigObj = {
-      domain: domain ? domain : 'localhost',
-      isHttps: isHttps ? isHttps : false,
-      prefixPath: prefixPath ? prefixPath : '/app'
-    };
+  useFactory: (urlConfig: IUrlConfig): IUrlConfig => {
+    const defaultUrlConfig = { domain: 'localhost', isHttps: true, prefixPath: '/app' };
+    const mergedUrlConfig = Object.assign(defaultUrlConfig, urlConfig);
 
-    return urlConfigObj;
+    return mergedUrlConfig;
   }
 }
