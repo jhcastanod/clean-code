@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import { HeroModel } from 'models/animal/hero/hero.model';
+import { HeroModel } from 'models/hero/hero.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
-  create(hero: HeroModel, isHurt: boolean) {
+  create(hero: HeroModel, isHurt: boolean): HeroModel {
     const defaultValues = { fly: false, life: 100, name: 'Aldo Raine' };
 
     if (isHurt) {
