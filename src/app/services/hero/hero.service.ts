@@ -12,8 +12,8 @@ export class HeroService {
     return hero;
   }
 
-  createHurtedHero({ fly, life, name }: HeroModel): HeroModel {
-    life = 20;
+  createHurtedHero({ fly, name }: HeroModel): HeroModel {
+    const life = 20;
     const hero = this.createBaseHero({ fly, life, name });
 
     return hero;
