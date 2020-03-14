@@ -13,7 +13,7 @@ export class HeroService {
       hero.life -= 20;
     }
 
-    const newHero = { ...defaultValues };
+    const newHero = { ...defaultValues, ...hero };
 
     return newHero;
   }
