@@ -6,19 +6,17 @@ import { HeroModel } from 'models/hero/hero.model';
   providedIn: 'root'
 })
 export class HeroService {
-  create(fly: boolean, life: number): HeroModel {
-    const heroBase = this.createBaseHero({ fly, life });
-    const newHero = heroBase;
+  create({ fly, life, name }: HeroModel): HeroModel {
+    const hero = this.createBaseHero({ fly, life, name });
 
-    return newHero;
+    return hero;
   }
 
-  createHurtedHero(fly: boolean, life: number): HeroModel {
-    const heroBase = this.createBaseHero({ fly, life });
-    heroBase.life = 20;
-    const demageHero = heroBase;
+  createHurtedHero({ fly, life, name }: HeroModel): HeroModel {
+    life = 20;
+    const hero = this.createBaseHero({ fly, life, name });
 
-    return demageHero;
+    return hero;
   }
 
   private createBaseHero(hero: HeroModel): HeroModel {
