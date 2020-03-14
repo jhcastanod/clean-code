@@ -21,8 +21,8 @@ export class HeroService {
 
   private createBaseHero(hero: HeroModel): HeroModel {
     const defaultHeroValues = { fly: false, life: 100, name: 'Aldo Raine' };
-    const mergeDefaultAndParamValues = { ...defaultHeroValues, ...hero };
+    const mergedHero = { ...defaultHeroValues, ...hero };
 
-    return mergeDefaultAndParamValues;
+    return mergedHero;
   }
 }
