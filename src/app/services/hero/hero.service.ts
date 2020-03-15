@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HeroModel } from 'models/hero/hero.model';
+import { IHero } from 'interfaces/hero';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class HeroService {
     return hero;
   }
 
-  createHurtedHero({ fly, name }: HeroModel): HeroModel {
+  createHurtedHero({ fly, name }: IHero): Pick<HeroModel, 'fly' | 'name'> {
     const life = 20;
     const hero = this.createBaseHero({ fly, life, name });
 
