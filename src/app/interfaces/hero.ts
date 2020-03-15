@@ -1,5 +1,5 @@
 export interface IHero {
   fly: boolean;
-  life: boolean;
+  life?: number;
   name: string;
 }

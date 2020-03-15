@@ -9,20 +9,20 @@ import { IHero } from '../../interfaces/hero';
 export class HeroService {
   readonly defaultHeroValues: HeroModel = { fly: false, life: 100, name: 'Aldo Raine' };
 
-  create({ fly, life, name }: HeroModel): HeroModel {
+  create({ fly, life, name }: IHero): IHero {
     const hero = this.createBaseHero({ fly, life, name });
 
     return hero;
   }
 
-  createHurtedHero({ fly, name }: IHero): Pick<HeroModel, 'fly' | 'name'> {
+  createHurtedHero({ fly, name }: IHero): IHero {
     const life = 20;
     const hero = this.createBaseHero({ fly, life, name });
 
     return hero;
   }
 
-  private createBaseHero(hero: HeroModel): HeroModel {
+  private createBaseHero(hero: IHero): IHero {
     const mergedHero = { ...this.defaultHeroValues, ...hero };
 
     return mergedHero;
