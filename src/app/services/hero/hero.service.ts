@@ -7,7 +7,7 @@ import { IHero } from '../../interfaces/hero';
   providedIn: 'root'
 })
 export class HeroService {
-  readonly defaultHeroValues: HeroModel = { fly: false, life: 100, name: 'Aldo Raine' };
+  readonly defaultHeroValues: IHero = { fly: false, life: 100, name: 'Aldo Raine' };
 
   create({ fly, life, name }: IHero): IHero {
     const hero = this.createBaseHero({ fly, life, name });
