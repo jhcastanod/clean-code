@@ -15,7 +15,7 @@ export class HeroService {
     return hero;
   }
 
-  createHurtedHero({ fly, name }: IHero): IHero {
+  createHurtedHero({ fly, name }: IHero): Pick<IHero, 'fly' | 'name'> {
     const life = 20;
     const hero = this.createBaseHero({ fly, life, name });
 
