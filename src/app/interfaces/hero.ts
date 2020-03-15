@@ -1,5 +1,5 @@
-import { ICharacter } from './character';
-
-export interface IHero extends ICharacter {
+export interface IHero {
   fly: boolean;
+  life: boolean;
+  name: string;
 }

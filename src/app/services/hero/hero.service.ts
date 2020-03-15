@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 
-import { HeroModel } from 'models/hero/hero.model';
-import { IHero } from 'interfaces/hero';
+import { HeroModel } from '../../models/hero/hero.model';
+import { IHero } from '../../interfaces/hero';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
+  readonly defaultHeroValues: HeroModel = { fly: false, life: 100, name: 'Aldo Raine' };
+
   create({ fly, life, name }: HeroModel): HeroModel {
     const hero = this.createBaseHero({ fly, life, name });
 
@@ -21,8 +23,7 @@ export class HeroService {
   }
 
   private createBaseHero(hero: HeroModel): HeroModel {
-    const defaultHeroValues = { fly: false, life: 100, name: 'Aldo Raine' };
-    const mergedHero = { ...defaultHeroValues, ...hero };
+    const mergedHero = { ...this.defaultHeroValues, ...hero };
 
     return mergedHero;
   }
