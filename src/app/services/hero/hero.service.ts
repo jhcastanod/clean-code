@@ -15,18 +15,12 @@ export class HeroService {
 
   create({ fly, life, name }: IHero): IHero {
     const hero = this.createBaseHero({ fly, life, name });
-    const errors = this.getErrorsFromServer();
-    return hero;
-  }
-
-  getErrorsFromServer() {
-    this.http.get(this.endpoint).subscribe((response) => {
-      const obj = {};
-      const errorsArr = response.errors;
-      this.keyOnlyErrosObj = errorsArr.map((e) => {
-        return; // new obj structure
-      });
+    this.http.post(this.endpoint, hero).subscribe(() => {
+      // success paht
+    }, err => {
+      // failed path
     });
+    return hero;
   }
 
   private createBaseHero(hero: IHero): IHero {
