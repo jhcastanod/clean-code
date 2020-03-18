@@ -7,8 +7,8 @@ class HeroBuilder {
     this.name = name ;
   }
 
-  setIsFly(fly: boolean) {
-    this.fly = fly;
+  setIsFly(flying: boolean) {
+    this.fly = flying;
 
     return this;
   }
