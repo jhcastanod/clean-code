@@ -5,29 +5,27 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { BAD_REQUEST } from 'http-status-codes';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
 export class BadRequestHttpInterceptor implements HttpInterceptor {
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler,
   ): Observable<HttpEvent<any>> {
-    return next
-      .handle(req)
-      .pipe(catchError(httpError => this.onCatchError(httpError)));
+    return next.handle(req).pipe(catchError(this.onCatchError.bind(this)));
   }
 
   private onCatchError(httpError: HttpErrorResponse) {
-    if (httpError.status === BAD_REQUEST) {
-      httpError.error.errors = this.transformErrorsToFormErrors(
+    const isBadRequestError = httpError.status === BAD_REQUEST;
+
+    if (isBadRequestError) {
+      const transformedErrors = this.transformErrorsToFormErrors(
         httpError.error.errors,
       );
+
+      httpError.error.errors = transformedErrors;
     }
 
     return throwError(httpError);
