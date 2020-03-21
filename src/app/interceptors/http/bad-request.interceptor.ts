@@ -16,11 +16,11 @@ export class BadRequestHttpInterceptor implements HttpInterceptor {
     return throwError(error);
   }
 
-  private transformErrorsToFormErrors(error: { key: string, reason: string }[]) {
+  private transformErrorsToFormErrors(errors: { key: string, reason: string }[]) {
     const obj = {};
 
-    for (const value of error) {
-      obj[value.key] = { [value.reason]: true };
+    for (const error of errors) {
+      obj[error.key] = { [error.reason]: true };
     }
 
     return obj;
