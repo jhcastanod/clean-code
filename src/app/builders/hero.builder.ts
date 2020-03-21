@@ -1,6 +1,8 @@
-import { HeroModel } from "models/hero/hero.model";
+import { classToPlain, plainToClass } from 'class-transformer';
 
-class HeroBuilder {
+import { HeroModel } from 'models/hero.model';
+
+export class HeroBuilder {
   private fly = false;
   private life = 100;
   private name: string;
@@ -22,8 +24,8 @@ class HeroBuilder {
   }
 
   build(): HeroModel {
-    // plainToClass is from class-transformer package
-    const hero = plainToClass(this, HeroModel);
+    const heroProps = classToPlain(this);
+    const hero = plainToClass(HeroModel, heroProps);
 
     return hero;
   }

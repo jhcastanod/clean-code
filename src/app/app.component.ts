@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { IStorage } from 'providers/storage/interfaces/storage';
+import { HeroService } from 'services/hero/hero.service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,19 @@ import { IStorage } from 'providers/storage/interfaces/storage';
 export class AppComponent implements OnInit {
   title = 'clean-code';
 
-  constructor(@Inject('STORAGE') private readonly storage: IStorage) { }
+  constructor(private readonly heroService: HeroService) {}
 
   ngOnInit() {
-    this.storage.set('key', 'Jorge Castaño');
-
-    console.log(this.storage.get('key'));
+    this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
+      complete: () => {
+        console.log('complete');
+      },
+      error: (error) => {
+        console.log('heroService.error', error);
+      },
+      next: () => {
+        console.log('next');
+      }
+    });
   }
 }
