@@ -5,16 +5,12 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { BAD_REQUEST } from 'http-status-codes';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { BadResquestErrorsToFormErrors } from 'transformers/bad-request-errors-to-form-errors.transformer';
 
 
-@Injectable({
-  providedIn: 'root',
-})
 export class BadRequestHttpInterceptor implements HttpInterceptor {
   intercept(
     req: HttpRequest<any>,
