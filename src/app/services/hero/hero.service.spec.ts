@@ -1,8 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HeroService } from './hero.service';
-import { of } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('HeroService', () => {
   let service: HeroService;

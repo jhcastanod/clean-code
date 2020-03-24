@@ -11,16 +11,16 @@ export class HeroBuilder {
     this.name = name;
   }
 
-  setAsFly() {
+  setAsFly(): boolean {
     this.fly = true;
 
-    return this;
+    return this.fly;
   }
 
-  setLife(life: number) {
+  setLife(life: number): number {
     this.life = life;
 
-    return this;
+    return this.life;
   }
 
   build(): HeroModel {

@@ -2,20 +2,20 @@ import { BadResquestErrorsToFormErrors } from './bad-request-errors-to-form-erro
 
 describe('BadResquestErrorsToFormErrors', () => {
   it('should transform from array to object errors structure', () => {
-    const errorFromServer = [
+    const errorsFromServer = [
       { key: 'key1', reason: 'reason1' },
       { key: 'key2', reason: 'reason2' },
       { key: 'key3', reason: 'reason3' },
     ];
-    const errorExpected = {
+    const expectedErrors = {
       key1: { reason1: true },
       key2: { reason2: true },
       key3: { reason3: true },
     };
 
-    const result = BadResquestErrorsToFormErrors.transformErrorsToFormErrors(errorFromServer);
+    const result = BadResquestErrorsToFormErrors.transformErrorsToFormErrors(errorsFromServer);
 
-    expect(result).toEqual(errorExpected);
+    expect(result).toEqual(expectedErrors);
   });
 });
 
