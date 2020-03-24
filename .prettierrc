@@ -1,8 +1,8 @@
 {
-    "trailingComma": "all",
-    "tabWidth": 2,
-    "proseWrap": "always",
-    "semi": true,
-    "singleQuote": true
-  }
+  "proseWrap": "always",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all"
+}
   

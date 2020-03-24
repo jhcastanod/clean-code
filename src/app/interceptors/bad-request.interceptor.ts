@@ -14,7 +14,7 @@ import { BadResquestErrorsToFormErrors } from 'transformers/bad-request-errors-t
 
 export class BadRequestHttpInterceptor implements HttpInterceptor {
   intercept(
-    // TODO Add type
+    // TODO: Add type
     req: HttpRequest<any>,
     next: HttpHandler,
   ): Observable<HttpEvent<any>> {
