@@ -10,7 +10,7 @@ import { HeroService } from 'services/hero/hero.service';
 export class AppComponent implements OnInit {
   title = 'clean-code';
 
-  constructor(private readonly heroService: HeroService) {}
+  constructor(private readonly heroService: HeroService) { }
 
   ngOnInit() {
     this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
