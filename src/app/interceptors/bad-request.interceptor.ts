@@ -5,7 +5,6 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-
 import { BAD_REQUEST } from 'http-status-codes';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -13,6 +12,7 @@ import { catchError } from 'rxjs/operators';
 import { BadResquestErrorsToFormErrors } from 'transformers/bad-request-errors-to-form-errors.transformer';
 
 export class BadRequestHttpInterceptor implements HttpInterceptor {
+  // TODO: Fix return type
   intercept(
     // TODO: Add type
     req: HttpRequest<any>,
