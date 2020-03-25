@@ -1,30 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { HeroModel } from '../../models/hero/hero.model';
-import { IHero } from '../../interfaces/hero';
+import { IHero } from 'interfaces/hero';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
-  readonly defaultHeroValues: IHero = { fly: false, life: 100, name: 'Aldo Raine' };
+  readonly endpoint = 'http://www.mocky.io/v2/5e7657ac2f0000710098603e';
 
-  create({ fly, life, name }: IHero): IHero {
-    const hero = this.createBaseHero({ fly, life, name });
+  constructor(private readonly http: HttpClient) {}
 
-    return hero;
-  }
-
-  createHurtedHero({ fly, name }: IHero): Pick<IHero, 'fly' | 'name'> {
-    const life = 20;
-    const hero = this.createBaseHero({ fly, life, name });
-
-    return hero;
-  }
-
-  private createBaseHero(hero: IHero): IHero {
-    const mergedHero = { ...this.defaultHeroValues, ...hero };
-
-    return mergedHero;
+  create(hero: IHero): Observable<IHero> {
+    return this.http.post<IHero>(this.endpoint, hero);
   }
 }
