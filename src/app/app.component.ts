@@ -28,6 +28,6 @@ export class AppComponent implements OnInit {
         console.log('next');
       }
     });
-    this.notificationService.show('info', 'this is a info message');
+    this.notificationService.show('success', 'this is a success message');
   }
 }
