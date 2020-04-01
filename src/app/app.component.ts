@@ -19,13 +19,13 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
       complete: () => {
-        this.notificationService.show('success', 'Hero has been created successfuly');
+        console.log('complete');
       },
       error: (error) => {
         console.log('heroService.error', error);
       },
       next: () => {
-        console.log('next');
+        this.notificationService.show('success', 'Hero has been create successfuly');
       }
     });
   }
