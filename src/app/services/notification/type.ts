@@ -1,0 +1,1 @@
+type INotificationType = 'error' | 'info' | 'success' | 'warn';
