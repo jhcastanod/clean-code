@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
       },
       error: (error) => {
         console.log('heroService.error', error);
+        this.notificationService.show('error', 'A server error has ocurred, please, try again.');
       },
       next: () => {
         this.notificationService.show('success', 'Hero has been create successfuly');
