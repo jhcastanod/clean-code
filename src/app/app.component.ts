@@ -21,8 +21,7 @@ export class AppComponent implements OnInit {
       complete: () => {
         console.log('complete');
       },
-      error: (error) => {
-        console.log('heroService.error', error);
+      error: () => {
         this.notificationService.show('error', 'A server error has ocurred, please, try again.');
       },
       next: () => {
