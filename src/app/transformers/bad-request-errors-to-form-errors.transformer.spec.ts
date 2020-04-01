@@ -1,7 +1,7 @@
 import { BadResquestErrorsToFormErrors } from './bad-request-errors-to-form-errors.transformer';
 
 describe('BadResquestErrorsToFormErrors', () => {
-  it('should transform from array to object errors structure', () => {
+  it('should transform errors to form errors', () => {
     const errorsFromServer = [
       { key: 'key1', reason: 'reason1' },
       { key: 'key2', reason: 'reason2' },
