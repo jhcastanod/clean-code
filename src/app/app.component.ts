@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(
     private readonly heroService: HeroService,
     private readonly notificationService: NotificationService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
