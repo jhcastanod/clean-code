@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HeroService } from 'services/hero/hero.service';
-import { NotificationService } from 'services/notification/notification.service';
 
 @Component({
   selector: 'app-root',
