@@ -14,15 +14,15 @@ export class AppComponent implements OnInit {
   constructor(
     private readonly heroService: HeroService,
     private readonly notificationService: NotificationService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
       complete: () => {
         console.log('complete');
       },
-      error: () => {
-        this.notificationService.show('error', 'A server error has ocurred, please, try again.');
+      error: (error) => {
+        console.log('Error', error);
       },
       next: () => {
         this.notificationService.show('success', 'Hero has been create successfuly');
