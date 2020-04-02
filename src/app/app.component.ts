@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HeroService } from 'services/hero/hero.service';
+import { IHero } from 'interfaces/hero';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { HeroService } from 'services/hero/hero.service';
 })
 export class AppComponent implements OnInit {
   title = 'clean-code';
+  hero: IHero;
 
   constructor(private readonly heroService: HeroService) {}
 
@@ -20,7 +22,8 @@ export class AppComponent implements OnInit {
       error: (error) => {
         console.log('heroService.error', error);
       },
-      next: () => {
+      next: (serverHero: IHero) => {
+        this.hero = serverHero;
         console.log('next');
       }
     });

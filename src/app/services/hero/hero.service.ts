@@ -8,7 +8,7 @@ import { IHero } from 'interfaces/hero';
   providedIn: 'root'
 })
 export class HeroService {
-  readonly endpoint = 'http://www.mocky.io/v2/5e84fa50300000460a97ad84';
+  readonly endpoint = 'http://www.mocky.io/v2/5e86445c3100000929813940';
 
   constructor(private readonly http: HttpClient) {}
 
