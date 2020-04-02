@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HeroService } from 'services/hero/hero.service';
 import { IHero } from 'interfaces/hero';
+import { HeroService } from 'services/hero/hero.service';
 
 @Component({
   selector: 'app-root',
