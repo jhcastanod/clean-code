@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HeroService } from 'services/hero/hero.service';
-import { NotificationService } from 'services/notification/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +10,7 @@ import { NotificationService } from 'services/notification/notification.service'
 export class AppComponent implements OnInit {
   title = 'clean-code';
 
-  constructor(
-    private readonly heroService: HeroService,
-    private readonly notificationService: NotificationService
-  ) {}
+  constructor(private readonly heroService: HeroService) {}
 
   ngOnInit() {
     this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
@@ -25,7 +21,7 @@ export class AppComponent implements OnInit {
         console.log('heroService.error', error);
       },
       next: () => {
-        this.notificationService.show('success', 'Hero has been create successfuly');
+        console.log('next');
       }
     });
   }
