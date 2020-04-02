@@ -9,8 +9,8 @@ import { IHero } from 'interfaces/hero';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'clean-code';
   hero: IHero;
+  title = 'clean-code';
 
   constructor(private readonly heroService: HeroService) {}
 
