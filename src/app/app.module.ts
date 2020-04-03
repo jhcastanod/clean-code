@@ -7,6 +7,7 @@ import { StorageProvider } from 'providers/storage/storage.provider';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { InternalServerErrorHttpInterceptor } from 'interceptors/internal-server-error.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,11 @@ import { AppRoutingModule } from './app-routing.module';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: BadRequestHttpInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InternalServerErrorHttpInterceptor,
       multi: true,
     },
     StorageProvider,

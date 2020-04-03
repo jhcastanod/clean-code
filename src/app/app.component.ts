@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { IHero } from 'interfaces/hero';
 import { HeroService } from 'services/hero/hero.service';
+import { plainToClass } from 'class-transformer';
+import { HeroModel } from 'models/hero.model';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { HeroService } from 'services/hero/hero.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  hero: IHero;
+  hero: {fly: boolean; life: number; name: string; };
   title = 'clean-code';
 
   constructor(private readonly heroService: HeroService) {}
@@ -22,8 +24,8 @@ export class AppComponent implements OnInit {
       error: (error) => {
         console.log('heroService.error', error);
       },
-      next: (serverHero: IHero) => {
-        this.hero = serverHero;
+      next: (serverHero: HeroModel) => {
+        this.hero = plainToClass(HeroModel, serverHero);
         console.log('next');
       }
     });
