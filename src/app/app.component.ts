@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HeroService } from 'services/hero/hero.service';
+import { IHero } from 'interfaces/hero';
 
 @Component({
   selector: 'app-root',
@@ -21,9 +22,9 @@ export class AppComponent implements OnInit {
       error: (error) => {
         console.log('heroService.error', error);
       },
-      next: (hero) => {
+      next: (hero: IHero) => {
         this.hero = hero;
-        console.log('next');
+        console.log(this.hero);
       }
     });
   }
