@@ -8,7 +8,7 @@ import { NotificationService } from 'services/notification/notification.service'
 export class InternalServerErrorInterceptor implements HttpInterceptor {
   constructor(private readonly notificationService: NotificationService) {}
 
-  // TODO: fix type
+  // TODO: Fix type
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(catchError(this.onCatchError.bind(this)));
   }
