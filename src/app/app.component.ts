@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IHero } from 'interfaces/hero';
 import { HeroService } from 'services/hero/hero.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { HeroService } from 'services/hero/hero.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  hero: IHero;
   title = 'clean-code';
 
   constructor(private readonly heroService: HeroService) {}
@@ -17,11 +19,9 @@ export class AppComponent implements OnInit {
       complete: () => {
         console.log('complete');
       },
-      error: (error) => {
-        console.log('heroService.error', error);
-      },
-      next: () => {
-        console.log('next');
+      next: (hero: IHero) => {
+        this.hero = hero;
+        console.log(this.hero);
       }
     });
   }

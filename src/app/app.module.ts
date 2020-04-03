@@ -2,7 +2,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { BadRequestHttpInterceptor } from 'interceptors/bad-request.interceptor';
+import { BadRequestInterceptor } from 'interceptors/bad-request.interceptor';
+import { InternalServerErrorInterceptor } from 'interceptors/internal-server-error.interceptor';
 import { StorageProvider } from 'providers/storage/storage.provider';
 
 import { AppComponent } from './app.component';
@@ -14,7 +15,12 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: BadRequestHttpInterceptor,
+      useClass: BadRequestInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InternalServerErrorInterceptor,
       multi: true,
     },
     StorageProvider,
