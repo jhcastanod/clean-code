@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   hero: any;
   title = 'clean-code';
 
-  constructor(private readonly heroService: HeroService) {}
+  constructor(private readonly heroService: HeroService) { }
 
   ngOnInit() {
     this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
         console.log('heroService.error', error);
       },
       next: (hero) => {
-        this.hero = hero instanceof HeroModel;
+        this.hero = hero;
         console.log('next');
       }
     });
