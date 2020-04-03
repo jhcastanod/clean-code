@@ -12,7 +12,7 @@ import { catchError } from 'rxjs/operators';
 import { BadResquestErrorsToFormErrors } from 'transformers/bad-request-errors-to-form-errors.transformer';
 
 export class BadRequestInterceptor implements HttpInterceptor {
-  // TODO: Fix type
+  // TODO: Fix return type
   intercept(
     // TODO: Fix type
     req: HttpRequest<any>,
