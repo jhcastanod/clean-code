@@ -11,7 +11,7 @@ import { catchError } from 'rxjs/operators';
 
 import { BadResquestErrorsToFormErrors } from 'transformers/bad-request-errors-to-form-errors.transformer';
 
-export class BadRequestHttpInterceptor implements HttpInterceptor {
+export class BadRequestInterceptor implements HttpInterceptor {
   // TODO: Fix type
   intercept(
     // TODO: Fix type

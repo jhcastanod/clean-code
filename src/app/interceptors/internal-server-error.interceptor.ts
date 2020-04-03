@@ -5,7 +5,7 @@ import { catchError } from 'rxjs/operators';
 
 import { NotificationService } from 'services/notification/notification.service';
 
-export class InternalServerErrorHttpInterceptor implements HttpInterceptor {
+export class InternalServerErrorInterceptor implements HttpInterceptor {
   constructor(private readonly notificationService: NotificationService) {}
 
   // TODO: fix type
