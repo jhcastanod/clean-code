@@ -1,5 +1,3 @@
 export class CharacterModel {
-  setName(name: string) {
-
-  }
+  setName(name: string) {}
 }
