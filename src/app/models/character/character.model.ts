@@ -1,3 +1,9 @@
 export class CharacterModel {
-  setName(name: string) {}
+  private name: string;
+
+  setName(name: string) {
+    this.name = name;
+
+    return this;
+  }
 }
