@@ -1,5 +1,5 @@
 export class CharacterModel {
-  private name: string;
+  name: string;
 
   setName(name: string) {
     this.name = name;
