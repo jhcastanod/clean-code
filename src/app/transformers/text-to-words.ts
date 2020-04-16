@@ -1,9 +1,15 @@
 export class TextToWords {
-  extractWords(text: string): string[] {
-    const result = text.split(' ');
+  constructor(private readonly text: string) {}
+
+  extractWords(): string[] {
+    const result = this.text.split(' ');
 
     return result;
   }
 
-  isTextEmpty() {}
+  isTextEmpty(): boolean {
+    const isTextEmpty = this.text.length === 0;
+
+    return isTextEmpty;
+  }
 }
