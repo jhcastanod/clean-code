@@ -7,11 +7,13 @@ export class SpanishWords extends TextToWords {
     super(text);
   }
 
-  hasSpanishWords() {
+  hasSpanishWords(): boolean {
     const extractedWords = this.extractWords();
 
-    this.spanishWords.map((word: string) => {
-     return extractedWords.includes(word);
+    extractedWords.some((word) => {
+      return this.spanishWords.includes(word);
     });
+
+    return false;
   }
 }
