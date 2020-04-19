@@ -1,15 +1,17 @@
 import { TextToWords } from './text-to-words';
 
 export class SpanishWords extends TextToWords {
+  readonly spanishWords = ['hola', 'adios', 'español'];
+
+  constructor(text: string) {
+    super(text);
+  }
+
   hasSpanishWords() {
-    if (this.isTextEmpty()) {
-      return false;
-    }
+    const extractedWords = this.extractWords();
 
-    if (this.extractWords().length === 0) {
-      return false;
-    }
-
-    return true;
+    this.spanishWords.map((word: string) => {
+     return extractedWords.includes(word);
+    });
   }
 }
