@@ -1,7 +1,7 @@
 import { TextToWords } from './text-to-words';
 
 export class NonWords extends TextToWords {
-  readonly NonWords = ['bitch', 'fuck', 'pussy'];
+  readonly nonWords = ['bitch', 'fuck', 'pussy'];
 
   hasNonWords(): boolean {
     const words = this.extractWords();
