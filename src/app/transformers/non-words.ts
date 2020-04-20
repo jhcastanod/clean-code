@@ -6,15 +6,15 @@ export class NonWords extends TextToWords {
   hasNonWords(): boolean {
     const words = this.extractWords();
 
+    if (this.isTextEmpty()) {
+      return false;
+    }
+
     const hasNonWords = words.some((word: string) => {
       const isNonWord = this.NonWords.includes(word);
 
       return isNonWord;
     });
-
-    if (this.isTextEmpty()) {
-      return false;
-    }
 
     return hasNonWords;
   }
