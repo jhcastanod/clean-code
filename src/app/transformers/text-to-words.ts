@@ -2,9 +2,9 @@ export class TextToWords {
   constructor(private readonly text: string) {}
 
   extractWords(): string[] {
-    const result = this.text.split(' ');
+    const words = this.text.split(' ');
 
-    return result;
+    return words;
   }
 
   isTextEmpty(): boolean {

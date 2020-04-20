@@ -3,16 +3,15 @@ import { TextToWords } from './text-to-words';
 export class SpanishWords extends TextToWords {
   readonly spanishWords = ['hola', 'adios', 'español'];
 
-  constructor(text: string) {
-    super(text);
-  }
+  hasSpanishWords(): boolean {
+    const words = this.extractWords();
 
-  hasSpanishWords() {
-    const extractedWords = this.extractWords();
-    const result = extractedWords.some((word) => {
-      return this.spanishWords.includes(word);
+    const hasSpanishWords = words.some((word: string) => {
+      const isSpanishWord = this.spanishWords.includes(word);
+
+      return isSpanishWord;
     });
 
-    return result;
+    return hasSpanishWords;
   }
 }

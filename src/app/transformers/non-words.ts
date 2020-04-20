@@ -1,19 +1,17 @@
 import { TextToWords } from './text-to-words';
 
 export class NonWords extends TextToWords {
-  constructor(text: string) {
-    super(text);
-  }
+  readonly NonWords = ['bitch', 'fuck', 'pussy'];
 
-  hasNonWords() {
-    if (this.isTextEmpty()) {
-      return false;
-    }
+  hasNonWords(): boolean {
+    const words = this.extractWords();
 
-    if (this.extractWords().length === 0) {
-      return false;
-    }
+    const hasNonWords = words.some((word: string) => {
+      const isNonWord = this.NonWords.includes(word);
 
-    return true;
+      return isNonWord;
+    });
+
+    return hasNonWords;
   }
 }
