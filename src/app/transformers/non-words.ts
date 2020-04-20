@@ -11,7 +11,7 @@ export class NonWords extends TextToWords {
     }
 
     const hasNonWords = words.some((word: string) => {
-      const isNonWord = this.NonWords.includes(word);
+      const isNonWord = this.nonWords.includes(word);
 
       return isNonWord;
     });
