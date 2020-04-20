@@ -4,6 +4,10 @@ export class SpanishWords extends TextToWords {
   readonly spanishWords = ['hola', 'adios', 'español'];
 
   hasSpanishWords(): boolean {
+    if (this.isTextEmpty()) {
+      return false;
+    }
+
     const words = this.extractWords();
 
     const hasSpanishWords = words.some((word: string) => {
