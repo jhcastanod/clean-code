@@ -12,6 +12,10 @@ export class NonWords extends TextToWords {
       return isNonWord;
     });
 
+    if (this.isTextEmpty()) {
+      return false;
+    }
+
     return hasNonWords;
   }
 }
