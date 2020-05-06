@@ -1,5 +1,16 @@
 export class Square {
-  setHeight() {}
+  height: number;
+  width: number;
 
-  setWidth() {}
+  setHeight(height: number): this {
+    this.height = height;
+
+    return this;
+  }
+
+  setWidth(width: number): this {
+    this.width = width;
+
+    return this;
+  }
 }
