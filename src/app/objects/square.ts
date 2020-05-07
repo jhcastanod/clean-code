@@ -1,11 +1,17 @@
 import { Rectangle } from './rectangle';
 
 export class Square extends Rectangle {
-  setHeight(height: number) {
-    this.setSide(height);
+  setHeight(width: number): this {
+    this.height = width;
+    this.width = width;
+
+    return this;
   }
 
-  setWidth(width: number) {
-    this.setBase(width);
+  setWidth(width: number): this {
+    this.height = width;
+    this.width = width;
+
+    return this;
   }
 }

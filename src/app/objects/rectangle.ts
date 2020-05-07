@@ -1,15 +1,15 @@
 export class Rectangle {
-  base: number;
   height: number;
+  width: number;
 
-  setBase(base: number): this {
-    this.base = base;
+  setHeight(height: number): this {
+    this.height = height;
 
     return this;
   }
 
-  setSide(height: number): this {
-    this.height = height;
+  setWidth(width: number): this {
+    this.width = width;
 
     return this;
   }
