@@ -1,16 +1,11 @@
-export class Square {
-  height: number;
-  width: number;
+import { Rectangle } from './rectangle';
 
-  setHeight(height: number): this {
-    this.height = height;
-
-    return this;
+export class Square extends Rectangle {
+  setHeight(height: number) {
+    this.setSide(height);
   }
 
-  setWidth(width: number): this {
-    this.width = width;
-
-    return this;
+  setWidth(width: number) {
+    this.setBase(width);
   }
 }
