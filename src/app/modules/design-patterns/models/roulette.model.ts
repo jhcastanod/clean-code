@@ -1,4 +1,4 @@
-export interface RouletteModel {
+export interface RoulettetBetModel {
   amount: number;
   avatar: string;
   color: string;

@@ -9,7 +9,7 @@ import { BAD_REQUEST } from 'http-status-codes';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { BadResquestErrorsToFormErrors } from 'transformers/bad-request-errors-to-form-errors.transformer';
+import { BadResquestErrorsToFormErrors } from 'modules/solid/transformers/bad-request-errors-to-form-errors.transformer';
 
 export class BadRequestInterceptor implements HttpInterceptor {
   // TODO: Fix return type
