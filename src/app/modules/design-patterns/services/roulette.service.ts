@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import * as faker from 'faker';
 import { Subject } from 'rxjs';
 
-import { blackGreenOrRedColor } from 'utils/helpers';
-import { RoulettetBetModel } from '../models/roulette.model';
+import { getRandomRouletteColor } from 'utils/helpers';
+import { RoulettetBetModel } from '../observer/models/roulette-bet.model';
 
 
 @Injectable({
@@ -17,7 +17,7 @@ export class RouletteService {
     const bet = {
       amount: faker.finance.amount(0, 36),
       avatar: faker.image.avatar(),
-      color: blackGreenOrRedColor(),
+      color: getRandomRouletteColor(),
       name: faker.name.title()
     };
 

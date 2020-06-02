@@ -1,7 +1,7 @@
-export function blackGreenOrRedColor(): string {
+export function getRandomRouletteColor(): string {
   const colors = ['black', 'green', 'red'];
   const randomIndex = Math.floor(Math.random() * 3);
-  const randomColor = colors[randomIndex];
+  const color = colors[randomIndex];
 
-  return randomColor;
+  return color;
 }
