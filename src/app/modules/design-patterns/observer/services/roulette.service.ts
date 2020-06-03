@@ -3,7 +3,7 @@ import * as faker from 'faker';
 import { Subject } from 'rxjs';
 
 import { getRandomRouletteColor } from 'utils/helpers';
-import { RoulettetBetModel } from '../observer/models/roulette-bet.model';
+import { RoulettetBetModel } from '../models/roulette-bet.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ import { RoulettetBetModel } from '../observer/models/roulette-bet.model';
 export class RouletteService {
   bets = new Subject<RoulettetBetModel>();
 
-  generateRandomBets(): RoulettetBetModel[] {
+  pushRandomBets(): RoulettetBetModel[] {
     const bets = [];
 
     const bet = {
