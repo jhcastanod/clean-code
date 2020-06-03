@@ -1,5 +1,5 @@
 export interface RoulettetBetModel {
-  amount: number;
+  amount: string;
   avatar: string;
   color: string;
   name: string;

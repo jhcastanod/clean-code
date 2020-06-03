@@ -11,9 +11,7 @@ import { RoulettetBetModel } from '../models/roulette-bet.model';
 export class RouletteService {
   bets = new Subject<RoulettetBetModel>();
 
-  pushRandomBets(): RoulettetBetModel[] {
-    const bets = [];
-
+  pushRandomBets() {
     const bet = {
       amount: faker.finance.amount(0, 36),
       avatar: faker.image.avatar(),
@@ -21,8 +19,6 @@ export class RouletteService {
       name: faker.name.title()
     };
 
-    bets.push(bet);
-
-    return bets;
+    this.bets.next(bet);
   }
 }
