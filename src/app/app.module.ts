@@ -8,9 +8,10 @@ import { StorageProvider } from 'providers/storage/storage.provider';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RouletteBetComponent } from './modules/design-patterns/observer/components/roulette-bet/roulette-bet.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RouletteBetComponent],
   imports: [AppRoutingModule, BrowserModule, HttpClientModule],
   providers: [
     {
