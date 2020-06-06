@@ -11,21 +11,22 @@ import { RouletteService } from '../../services/roulette.service';
   styleUrls: ['./roulette-bet.component.scss']
 })
 export class RouletteBetComponent implements OnInit, OnDestroy {
-  @Input() color: string;
-
   betListArr: RoulettetBetModel[];
+
+  @Input()
+  color: string;
 
   // TODO: Add type
   rouletteSubscription$;
 
   constructor(private readonly rouletteService: RouletteService) {}
 
-  ngOnDestroy(): void {
-    this.rouletteSubscription$.unsubscribe();
-  }
-
   ngOnInit() {
     this.betsList();
+  }
+
+  ngOnDestroy() {
+    this.rouletteSubscription$.unsubscribe();
   }
 
   betsList() {

@@ -1,7 +1,6 @@
-<table>
-  <caption>Bets List</caption>
-  <tr *ngFor="let bet of betListArr">
+<table [style.background-color]="color">
+  <tr *ngFor="let bet of bets">
+    <td>{{bet.name}}</td>
     <td>{{bet.amount}}</td>
-    <th>{{bet.color}}</th>
   </tr>
 </table>
