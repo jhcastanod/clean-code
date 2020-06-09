@@ -11,7 +11,7 @@ import { RouletteService } from '../../services/roulette.service';
   styleUrls: ['./roulette-bet.component.scss']
 })
 export class RouletteBetComponent implements OnInit, OnDestroy {
-  betListArr: RoulettetBetModel[];
+  bets: RoulettetBetModel[];
 
   @Input()
   color: string;
@@ -42,6 +42,6 @@ export class RouletteBetComponent implements OnInit, OnDestroy {
   }
 
   pushBetToList(bet: RoulettetBetModel) {
-    this.betListArr.push(bet);
+    this.bets.push(bet);
   }
 }
