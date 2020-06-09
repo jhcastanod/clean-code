@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GreenColorComponent } from './green-color.component';
+import { RouletteComponent } from './roulette.component';
 
-describe('GreenColorComponent', () => {
-  let component: GreenColorComponent;
-  let fixture: ComponentFixture<GreenColorComponent>;
+describe('RouletteComponent', () => {
+  let component: RouletteComponent;
+  let fixture: ComponentFixture<RouletteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GreenColorComponent ]
+      declarations: [ RouletteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GreenColorComponent);
+    fixture = TestBed.createComponent(RouletteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

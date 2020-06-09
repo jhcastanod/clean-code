@@ -8,18 +8,14 @@ import { StorageProvider } from 'providers/storage/storage.provider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlackColorComponent } from './modules/design-patterns/observer/components/black-color/black-color.component';
-import { GreenColorComponent } from './modules/design-patterns/observer/components/green-color/green-color.component';
-import { RedColorComponent } from './modules/design-patterns/observer/components/red-color/red-color.component';
 import { RouletteBetComponent } from './modules/design-patterns/observer/components/roulette-bet/roulette-bet.component';
+import { RouletteComponent } from './modules/design-patterns/observer/pages/roulette/roulette.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlackColorComponent,
-    GreenColorComponent,
-    RedColorComponent,
     RouletteBetComponent,
+    RouletteComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, HttpClientModule],
   providers: [
