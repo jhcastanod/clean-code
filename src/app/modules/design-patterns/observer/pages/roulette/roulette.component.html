@@ -1,3 +1,11 @@
-<app-roulette-bet [color]="black"></app-roulette-bet>
-<app-roulette-bet [color]="green"></app-roulette-bet>
-<app-roulette-bet [color]="red"></app-roulette-bet>
+<div class="roulette__wrapper">
+  <div class="roulette_wrapper-actions">
+    <button (click)="onPushRandomBets()">Push random bets</button>
+  </div>
+
+  <div class="roulette__wrapper-bets">
+    <app-roulette-bet color="red"></app-roulette-bet>
+    <app-roulette-bet color="black"></app-roulette-bet>
+    <app-roulette-bet color="green"></app-roulette-bet>
+  </div>
+</div>

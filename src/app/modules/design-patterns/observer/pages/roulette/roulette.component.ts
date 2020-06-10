@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { RouletteService } from '../../services/roulette.service';
 
 @Component({
   selector: 'app-roulette',
   templateUrl: './roulette.component.html',
   styleUrls: ['./roulette.component.scss']
 })
-export class RouletteComponent implements OnInit {
+export class RouletteComponent {
 
-  constructor() { }
+  constructor(private readonly rouletteService: RouletteService) {}
 
-  ngOnInit() {
+  onPushRandomBets() {
+    this.rouletteService.pushRandomBets();
   }
 
 }

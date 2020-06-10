@@ -11,7 +11,7 @@ import { RouletteService } from '../../services/roulette.service';
   styleUrls: ['./roulette-bet.component.scss']
 })
 export class RouletteBetComponent implements OnInit, OnDestroy {
-  bets: RoulettetBetModel[];
+  bets: RoulettetBetModel[] = [];
 
   @Input()
   color: string;
@@ -32,7 +32,10 @@ export class RouletteBetComponent implements OnInit, OnDestroy {
   betsList() {
     this.rouletteSubscription$ = this.rouletteService.bets
       .pipe(filter((bet: RoulettetBetModel) => this.isSameColor(bet)))
-      .subscribe((bet: RoulettetBetModel) => this.pushBetToList(bet));
+      .subscribe((bet: RoulettetBetModel) => {
+        console.log(bet);
+        this.pushBetToList(bet);
+      });
   }
 
   isSameColor(bet: RoulettetBetModel): boolean {
