@@ -8,11 +8,9 @@ import { RouletteService } from '../../services/roulette.service';
   styleUrls: ['./roulette.component.scss']
 })
 export class RouletteComponent {
-
   constructor(private readonly rouletteService: RouletteService) {}
 
-  onPushRandomBets() {
-    this.rouletteService.pushRandomBets();
+  pushRandomBet() {
+    this.rouletteService.pushRandomBet();
   }
-
 }

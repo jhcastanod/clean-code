@@ -11,7 +11,7 @@ import { RoulettetBetModel } from '../models/roulette-bet.model';
 export class RouletteService {
   bets = new Subject<RoulettetBetModel>();
 
-  pushRandomBets() {
+  pushRandomBet() {
     const bet = {
       amount: faker.finance.amount(0, 36),
       avatar: faker.image.avatar(),

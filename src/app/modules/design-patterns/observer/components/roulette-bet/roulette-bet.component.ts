@@ -4,7 +4,6 @@ import { filter } from 'rxjs/operators';
 import { RoulettetBetModel } from '../../models/roulette-bet.model';
 import { RouletteService } from '../../services/roulette.service';
 
-
 @Component({
   selector: 'app-roulette-bet',
   templateUrl: './roulette-bet.component.html',
@@ -32,10 +31,7 @@ export class RouletteBetComponent implements OnInit, OnDestroy {
   betsList() {
     this.rouletteSubscription$ = this.rouletteService.bets
       .pipe(filter((bet: RoulettetBetModel) => this.isSameColor(bet)))
-      .subscribe((bet: RoulettetBetModel) => {
-        console.log(bet);
-        this.pushBetToList(bet);
-      });
+      .subscribe((bet: RoulettetBetModel) => this.pushBetToList(bet));
   }
 
   isSameColor(bet: RoulettetBetModel): boolean {
