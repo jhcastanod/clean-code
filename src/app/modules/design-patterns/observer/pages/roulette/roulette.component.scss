@@ -1,10 +1,6 @@
-.roulette {
-  &__wrapper {
-    margin: 0 auto;
-    width: 300px;
+.roulette__wrapper {
+  margin: 0 auto;
+  width: 300px;
+}  
 
-    &__bets {
-      display: flex;
-    }
-  }
-}
+.roulette__bets { display: flex; }
