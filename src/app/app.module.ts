@@ -6,11 +6,17 @@ import { BadRequestInterceptor } from 'interceptors/bad-request.interceptor';
 import { InternalServerErrorInterceptor } from 'interceptors/internal-server-error.interceptor';
 import { StorageProvider } from 'providers/storage/storage.provider';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { RouletteBetComponent } from './modules/design-patterns/observer/components/roulette-bet/roulette-bet.component';
+import { RouletteComponent } from './modules/design-patterns/observer/pages/roulette/roulette.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    RouletteBetComponent,
+    RouletteComponent,
+  ],
   imports: [AppRoutingModule, BrowserModule, HttpClientModule],
   providers: [
     {
