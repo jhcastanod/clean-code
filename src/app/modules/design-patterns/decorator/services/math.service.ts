@@ -4,17 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MathService {
-  doCalcFibonacciSequence(num: number, memo: {}) {
-    memo = memo || {};
+  fibonacci(num: number): number {
+    const isLessOrEqualThanOne = num <= 1;
 
-    if (memo[num]) {
-      return memo[num];
-    }
-
-    if (num <= 1) {
+    if (isLessOrEqualThanOne) {
       return 1;
     }
 
-    return memo[num] = this.doCalcFibonacciSequence(num - 1, memo) + this.doCalcFibonacciSequence(num - 2, memo);
+    const result = this.fibonacci(num - 1) + this.fibonacci(num - 2);
+
+    return result;
   }
 }
