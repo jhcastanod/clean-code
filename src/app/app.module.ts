@@ -1,5 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BadRequestInterceptor } from 'interceptors/bad-request.interceptor';
@@ -17,7 +18,7 @@ import { RouletteComponent } from './modules/design-patterns/observer/pages/roul
     RouletteBetComponent,
     RouletteComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, HttpClientModule],
+  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
