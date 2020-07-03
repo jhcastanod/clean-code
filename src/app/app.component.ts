@@ -12,7 +12,7 @@ import { HeroService } from 'services/hero/hero.service';
 export class AppComponent implements OnInit {
   hero: IHero;
   title = 'clean-code';
-  number: number;
+  num: number;
 
   constructor(
     private readonly heroService: HeroService,
@@ -31,6 +31,6 @@ export class AppComponent implements OnInit {
   }
 
   generateFibonacciNum() {
-    const result = this.math.fibonacci(this.number);
+    this.math.fibonacci(this.num);
   }
 }

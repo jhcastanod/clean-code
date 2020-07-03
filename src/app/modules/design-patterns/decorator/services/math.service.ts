@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Memo } from 'decorators/memoize';
+import { Memo } from '../decorators/memoize';
 
 @Injectable({
   providedIn: 'root'
