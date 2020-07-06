@@ -11,8 +11,8 @@ import { HeroService } from 'services/hero/hero.service';
 })
 export class AppComponent implements OnInit {
   hero: IHero;
-  title = 'clean-code';
   num: number;
+  title = 'clean-code';
 
   constructor(
     private readonly heroService: HeroService,
