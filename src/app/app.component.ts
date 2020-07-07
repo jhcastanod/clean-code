@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { IHero } from 'interfaces/hero';
+import { MathService } from 'modules/design-patterns/decorator/services/math.service';
 import { HeroService } from 'services/hero/hero.service';
 
 @Component({
@@ -10,9 +11,12 @@ import { HeroService } from 'services/hero/hero.service';
 })
 export class AppComponent implements OnInit {
   hero: IHero;
+  num: number;
   title = 'clean-code';
 
-  constructor(private readonly heroService: HeroService) {}
+  constructor(
+    private readonly heroService: HeroService,
+    private readonly math: MathService) {}
 
   ngOnInit() {
     this.heroService.create({ fly: true, name: 'Batman' }).subscribe({
@@ -24,5 +28,9 @@ export class AppComponent implements OnInit {
         console.log(this.hero);
       }
     });
+  }
+
+  generateFibonacciNum() {
+    this.math.fibonacci(this.num);
   }
 }
