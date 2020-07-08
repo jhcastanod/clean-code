@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 
 import { IHero } from 'interfaces/hero';
 import { MathService } from 'modules/design-patterns/decorator/services/math.service';
+import { ICityHero } from 'modules/design-patterns/factory/interfaces/city-hero.interface';
 import { HeroService } from 'services/hero/hero.service';
 
 @Component({
@@ -15,6 +16,8 @@ export class AppComponent implements OnInit {
   title = 'clean-code';
 
   constructor(
+    @Inject('CITY_HERO')
+    private readonly cityHero: ICityHero,
     private readonly heroService: HeroService,
     private readonly math: MathService) {}
 
@@ -28,6 +31,8 @@ export class AppComponent implements OnInit {
         console.log(this.hero);
       }
     });
+
+    this.cityHero.savePeople();
   }
 
   generateFibonacciNum() {

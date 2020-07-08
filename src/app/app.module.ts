@@ -5,6 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { BadRequestInterceptor } from 'interceptors/bad-request.interceptor';
 import { InternalServerErrorInterceptor } from 'interceptors/internal-server-error.interceptor';
+import { ICityHero } from 'modules/design-patterns/factory/interfaces/city-hero.interface';
+import { Batman } from 'modules/design-patterns/factory/models/batman.hero';
+import { Superman } from 'modules/design-patterns/factory/models/superman.hero';
+import { DateService } from 'modules/design-patterns/factory/services/date.service';
 import { StorageProvider } from 'providers/storage/storage.provider';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +35,15 @@ import { RouletteComponent } from './modules/design-patterns/observer/pages/roul
       multi: true,
     },
     StorageProvider,
+    {
+      provide: 'CITY_HERO',
+      useFactory: (dateService: DateService): ICityHero => {
+        const cityHero = dateService.isNight() ? new Batman() : new Superman();
+
+        return cityHero;
+      },
+      deps: [DateService]
+    }
   ],
   bootstrap: [AppComponent],
 })
