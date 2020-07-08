@@ -7,7 +7,8 @@ const START_NIGHT_AT_HOUR = 20;
 })
 export class DateService {
   isNight(): boolean {
-    const isNight = (new Date()).getHours() >= START_NIGHT_AT_HOUR;
+    const currentHour = (new Date()).getHours();
+    const isNight = currentHour >= START_NIGHT_AT_HOUR;
 
     return isNight;
   }
