@@ -1,25 +1,21 @@
 import { IPlayer } from '../interfaces/player.interface';
 
 export class Striker implements IPlayer {
-  playerName: string;
-  playerPhoto: string;
-  playerTshirtNum: number;
+  constructor(
+    private readonly name: string,
+    private readonly tShirtNum: number,
+    private readonly photo: string
+    ) {}
 
-  constructor(name: string, tshirtNum: number, photo: string) {
-    this.playerName = name;
-    this.playerPhoto = photo;
-    this.playerTshirtNum = tshirtNum;
+  getName(): string {
+    return this.name;
   }
 
-  name(): string {
-    return this.playerName;
+  getPhoto(): string {
+    return this.photo;
   }
 
-  photo(): string {
-    return this.playerPhoto;
-  }
-
-  tShirtNum(): number {
-    return this.playerTshirtNum;
+  getTshirtNum(): number {
+    return this.tShirtNum;
   }
 }
