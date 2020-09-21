@@ -15,9 +15,9 @@ export abstract class AbstractBasePlayer {
     return this.tShirt;
   }
 
-  toJSON() {
-    const JSON = { name: this.getName(), photo: this.getPhoto(), tShirt: this.getTshirtNum() };
+  toJSON(): { name: string, photo: string, tShirt: number } {
+    const playerInfo = { name: this.getName(), photo: this.getPhoto(), tShirt: this.getTshirtNum() };
 
-    return JSON;
+    return playerInfo;
   }
 }
