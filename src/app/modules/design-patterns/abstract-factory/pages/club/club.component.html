@@ -5,23 +5,34 @@
   </ul>
 </nav>
 
-<div class="player goalkeeper">
-  <div class="name">{{ playerFactory.createGoalKeeper().getName() }}</div>
-  <div class="photo"><img [src]="playerFactory.createGoalKeeper().getPhoto()" width="300" [alt]="playerFactory.createGoalKeeper().getName()"></div>
-  <div class="tshirt-name">{{ playerFactory.createGoalKeeper().getTshirtNum()}}</div>
-  <div class="skill">{{ playerFactory.createGoalKeeper().defendPenalty()}}</div>
-</div>
+<div *ngIf="players">
+  <div class="player goalkeeper">
+    <div class="name">{{ players.goalKeeper.name }}</div>
 
-<div class="player midfield">
-  <div class="name">{{ playerFactory.createMidPlayer().getName() }}</div>
-  <div class="photo"><img [src]="playerFactory.createMidPlayer().getPhoto()" width="300" [alt]="playerFactory.createMidPlayer().getName()"></div>
-  <div class="tshirt-name">{{ playerFactory.createMidPlayer().getTshirtNum() }}</div>
-  <div class="skill">{{ playerFactory.createMidPlayer().passBallToStrikers() }}</div>
-</div>
+    <div class="photo">
+      <img [src]="players.goalKeeper.photo" width="300" [alt]="players.goalKeeper.name">
+    </div>
 
-<div class="player striker">
-  <div class="name">{{ playerFactory.createStrikerPlayer().getName() }}</div>
-  <div class="photo"><img [src]="playerFactory.createStrikerPlayer().getPhoto()" width="300" [alt]="playerFactory.createStrikerPlayer().getName()"></div>
-  <div class="tshirt-name">{{ playerFactory.createStrikerPlayer().getTshirtNum() }}</div>
-  <div class="skill">{{ playerFactory.createStrikerPlayer().makeGoal() }}</div>
+    <div class="tshirt-name">{{ players.goalKeeper.tShirt}}</div>
+  </div>
+  
+  <div class="player midfield">
+    <div class="name">{{ players.midField.name }}</div>
+
+    <div class="photo">
+      <img [src]="players.midField.photo" width="300" [alt]="players.midField.name">
+    </div>
+
+    <div class="tshirt-name">{{ players.midField.tShirt }}</div>
+  </div>
+  
+  <div class="player striker">
+    <div class="name">{{ players.striker.name }}</div>
+
+    <div class="photo">
+      <img [src]="players.striker.photo" width="300" [alt]="players.striker.name">
+    </div>
+
+    <div class="tshirt-name">{{ players.striker.tShirt }}</div>
+  </div>
 </div>

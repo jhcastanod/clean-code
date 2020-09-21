@@ -13,10 +13,19 @@ import { IPlayerFactory } from '../../interfaces/create-player.interface';
 export class ClubComponent implements OnInit {
   playerFactory: IPlayerFactory;
 
+  players;
+
   constructor(private readonly activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.activatedRoute.paramMap
-      .subscribe((param: Params) => this.playerFactory = teamBuilderFactory(param.get('club')));
+    this.activatedRoute.paramMap.subscribe((param: Params) => {
+      this.playerFactory = teamBuilderFactory(param.get('club'));
+
+      const goalKeeper = this.playerFactory.createGoalKeeper().toJSON();
+      const midField = this.playerFactory.createMidPlayer().toJSON();
+      const striker = this.playerFactory.createStrikerPlayer().toJSON();
+
+      this.players = { goalKeeper, midField, striker };
+    });
   }
 }

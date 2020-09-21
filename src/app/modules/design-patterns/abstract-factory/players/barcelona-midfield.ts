@@ -1,4 +1,4 @@
-import { IMidFieldPlayer } from '../interfaces/midfield.interface';
+import { IMidFieldPlayer } from '../interfaces/mid-field.interface';
 import { AbstractBasePlayer } from './base-player.interface';
 
 export class BarcelonaMidField extends AbstractBasePlayer implements IMidFieldPlayer {

@@ -1,6 +1,6 @@
 import { IPlayerFactory } from '../interfaces/create-player.interface';
 import { IGoalKeeperPlayer } from '../interfaces/goalkeeper.interface';
-import { IMidFieldPlayer } from '../interfaces/midfield.interface';
+import { IMidFieldPlayer } from '../interfaces/mid-field.interface';
 import { IStrikerPlayer } from '../interfaces/striker.interface';
 import { BarcelonaGoalKeeper } from '../players/barcelona-goalkeeper';
 import { BarcelonaMidField } from '../players/barcelona-midfield';
