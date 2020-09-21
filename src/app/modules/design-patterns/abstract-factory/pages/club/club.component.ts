@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { teamBuilderFactory } from '../../factories/team-builder-factory';
-import { IBuildPlayerFactory } from '../../interfaces/build-player.interface';
+import { IPlayerFactory } from '../../interfaces/create-player.interface';
 
 @Component({
   selector: 'app-club',
@@ -10,12 +10,12 @@ import { IBuildPlayerFactory } from '../../interfaces/build-player.interface';
   styleUrls: ['./club.component.scss']
 })
 export class ClubComponent implements OnInit {
-  playerBuilderFactory: IBuildPlayerFactory;
+  playerFactory: IPlayerFactory;
 
   constructor(private readonly activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.activatedRoute.queryParams
-      .subscribe(param => this.playerBuilderFactory = teamBuilderFactory(param['team']));
+      .subscribe(param => this.playerFactory = teamBuilderFactory(param['club']));
   }
 }
