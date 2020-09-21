@@ -1,9 +1,9 @@
-import { IGoalKeeperPlayer } from './goalkeeper-player.interface';
-import { IMidPlayer } from './mid-player.interface';
-import { IStrikerPlayer } from './striker-player.interface';
+import { IGoalKeeperPlayer } from './goalkeeper.interface';
+import { IMidFieldPlayer } from './midfield.interface';
+import { IStrikerPlayer } from './striker.interface';
 
 export interface IPlayerFactory {
   createGoalKeeper(): IGoalKeeperPlayer;
-  createMidPlayer(): IMidPlayer;
+  createMidPlayer(): IMidFieldPlayer;
   createStrikerPlayer(): IStrikerPlayer;
 }

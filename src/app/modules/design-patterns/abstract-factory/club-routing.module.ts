@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClubComponent } from './pages/club/club.component';
 
 const routes: Routes = [
-  { path: ':club', component: ClubComponent },
+  { path: 'club/:club', component: ClubComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
-import { AbstractBasePlayer } from '../interfaces/base-player.interface';
-import { IGoalKeeperPlayer } from '../interfaces/goalkeeper-player.interface';
+import { IGoalKeeperPlayer } from '../interfaces/goalkeeper.interface';
+import { AbstractBasePlayer } from './base-player.interface';
 
 export class BarcelonaGoalKeeper extends AbstractBasePlayer implements IGoalKeeperPlayer {
   defendPenalty(): boolean {

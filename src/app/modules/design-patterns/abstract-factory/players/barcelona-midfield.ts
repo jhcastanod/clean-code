@@ -1,7 +1,7 @@
-import { AbstractBasePlayer } from '../interfaces/base-player.interface';
-import { IMidPlayer } from '../interfaces/mid-player.interface';
+import { IMidFieldPlayer } from '../interfaces/midfield.interface';
+import { AbstractBasePlayer } from './base-player.interface';
 
-export class BarcelonaMidField extends AbstractBasePlayer implements IMidPlayer {
+export class BarcelonaMidField extends AbstractBasePlayer implements IMidFieldPlayer {
   getName(): string {
     const name = 'Messi';
 

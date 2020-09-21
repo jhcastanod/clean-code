@@ -1,4 +1,4 @@
-import { AbstractBasePlayer } from './base-player.interface';
+import { AbstractBasePlayer } from '../players/base-player.interface';
 
 export interface IStrikerPlayer extends AbstractBasePlayer {
   makeGoal(): boolean;

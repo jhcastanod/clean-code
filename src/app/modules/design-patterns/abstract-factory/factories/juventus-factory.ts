@@ -1,7 +1,7 @@
 import { IPlayerFactory } from '../interfaces/create-player.interface';
-import { IGoalKeeperPlayer } from '../interfaces/goalkeeper-player.interface';
-import { IMidPlayer } from '../interfaces/mid-player.interface';
-import { IStrikerPlayer } from '../interfaces/striker-player.interface';
+import { IGoalKeeperPlayer } from '../interfaces/goalkeeper.interface';
+import { IMidFieldPlayer } from '../interfaces/midfield.interface';
+import { IStrikerPlayer } from '../interfaces/striker.interface';
 import { JuventusGoalKeeper } from '../players/juventus-goalkeeper';
 import { JuventusMidField } from '../players/juventus-midfield';
 import { JuventusStriker } from '../players/juventus-striker';
@@ -13,7 +13,7 @@ export class JuventusPlayerFactory implements IPlayerFactory {
     return goalKeeper;
   }
 
-  createMidPlayer(): IMidPlayer {
+  createMidPlayer(): IMidFieldPlayer {
     const midFieldPlayer = new JuventusMidField();
 
     return midFieldPlayer;

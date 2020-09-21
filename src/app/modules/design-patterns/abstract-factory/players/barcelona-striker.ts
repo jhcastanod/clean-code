@@ -1,5 +1,5 @@
-import { AbstractBasePlayer } from '../interfaces/base-player.interface';
-import { IStrikerPlayer } from '../interfaces/striker-player.interface';
+import { IStrikerPlayer } from '../interfaces/striker.interface';
+import { AbstractBasePlayer } from './base-player.interface';
 
 export class BarcelonaStriker extends AbstractBasePlayer implements IStrikerPlayer {
   getName(): string {

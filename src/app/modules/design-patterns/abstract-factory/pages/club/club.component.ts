@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs';
 
-import { teamBuilderFactory } from '../../factories/team-builder-factory';
+import { teamBuilderFactory } from '../../factories/team-factory';
 import { IPlayerFactory } from '../../interfaces/create-player.interface';
 
 @Component({
@@ -15,7 +16,7 @@ export class ClubComponent implements OnInit {
   constructor(private readonly activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.activatedRoute.queryParams
-      .subscribe(param => this.playerFactory = teamBuilderFactory(param['club']));
+    this.activatedRoute.paramMap
+      .subscribe((param: Params) => this.playerFactory = teamBuilderFactory(param.get('club')));
   }
 }

@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'team',
-    loadChildren: () => import('./modules/design-patterns/abstract-factory/team.module').then(m => m.TeamModule)
+    path: 'abstract-factory',
+    loadChildren: () => import('./modules/design-patterns/abstract-factory/club.module').then(m => m.ClubModule)
   },
 ];
 

@@ -1,7 +1,7 @@
 import { IPlayerFactory } from '../interfaces/create-player.interface';
-import { IGoalKeeperPlayer } from '../interfaces/goalkeeper-player.interface';
-import { IMidPlayer } from '../interfaces/mid-player.interface';
-import { IStrikerPlayer } from '../interfaces/striker-player.interface';
+import { IGoalKeeperPlayer } from '../interfaces/goalkeeper.interface';
+import { IMidFieldPlayer } from '../interfaces/midfield.interface';
+import { IStrikerPlayer } from '../interfaces/striker.interface';
 import { BarcelonaGoalKeeper } from '../players/barcelona-goalkeeper';
 import { BarcelonaMidField } from '../players/barcelona-midfield';
 import { BarcelonaStriker } from '../players/barcelona-striker';
@@ -13,7 +13,7 @@ export class BarcelonaPlayerFactory implements IPlayerFactory {
     return goalKeeper;
   }
 
-  createMidPlayer(): IMidPlayer {
+  createMidPlayer(): IMidFieldPlayer {
     const midField = new BarcelonaMidField();
 
     return midField;

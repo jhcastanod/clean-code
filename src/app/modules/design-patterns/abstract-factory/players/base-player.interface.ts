@@ -1,7 +1,7 @@
 export abstract class AbstractBasePlayer {
-  name: string;
-  photo: string;
-  tShirt: number;
+  private name: string;
+  private photo: string;
+  private tShirt: number;
 
   getName(): string {
     return this.name;
