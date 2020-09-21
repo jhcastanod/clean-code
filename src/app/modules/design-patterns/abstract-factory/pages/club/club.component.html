@@ -1,0 +1,38 @@
+<nav>
+  <ul>
+    <li routerLink="../barcelona" routerLinkActive="router-link-active" >Barcerlona</li>
+    <li routerLink="../juventus" routerLinkActive="router-link-active" >Juventus</li>
+  </ul>
+</nav>
+
+<div *ngIf="players">
+  <div class="player goalkeeper">
+    <div class="name">{{ players.goalKeeper.name }}</div>
+
+    <div class="photo">
+      <img [src]="players.goalKeeper.photo" width="300" [alt]="players.goalKeeper.name">
+    </div>
+
+    <div class="tshirt-name">{{ players.goalKeeper.tShirt}}</div>
+  </div>
+  
+  <div class="player midfield">
+    <div class="name">{{ players.midField.name }}</div>
+
+    <div class="photo">
+      <img [src]="players.midField.photo" width="300" [alt]="players.midField.name">
+    </div>
+
+    <div class="tshirt-name">{{ players.midField.tShirt }}</div>
+  </div>
+  
+  <div class="player striker">
+    <div class="name">{{ players.striker.name }}</div>
+
+    <div class="photo">
+      <img [src]="players.striker.photo" width="300" [alt]="players.striker.name">
+    </div>
+
+    <div class="tshirt-name">{{ players.striker.tShirt }}</div>
+  </div>
+</div>

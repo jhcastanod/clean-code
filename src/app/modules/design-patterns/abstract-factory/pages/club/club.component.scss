@@ -1,0 +1,21 @@
+ul {
+  list-style: none;
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+}
+
+li {
+  padding-left: 10px;
+}
+
+.player {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  width: 110px;
+}
