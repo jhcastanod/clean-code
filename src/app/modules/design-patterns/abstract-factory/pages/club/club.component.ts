@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import { BarcelonaPlayerBuildFactory } from '../../factories/barcelona-factory';
-import { JuventusPlayerBuildFactory } from '../../factories/juventus-factory';
+import { teamBuilderFactory } from '../../factories/team-builder-factory';
 import { IBuildPlayerFactory } from '../../interfaces/build-player.interface';
 
 @Component({
@@ -16,18 +15,7 @@ export class ClubComponent implements OnInit {
   constructor(private readonly activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(param => this.choosePlayerBuilderFactory(param));
-  }
-
-  choosePlayerBuilderFactory(team: Params) {
-    const isBarcelonaTeam = team['name'] === 'barcelona';
-
-    if (isBarcelonaTeam) {
-      this.playerBuilderFactory = new BarcelonaPlayerBuildFactory();
-
-      return;
-    }
-
-    this.playerBuilderFactory =  new JuventusPlayerBuildFactory();
+    this.activatedRoute.queryParams
+      .subscribe(param => this.playerBuilderFactory = teamBuilderFactory(param['team']));
   }
 }
