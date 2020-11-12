@@ -12,7 +12,7 @@ export class XMLtoJsonAdapter implements IAdapter {
 
       return json;
     } catch (error) {
-      return `xml is invalid. Error: ${error}`;
+      return `An error has ocurred trying to convert XML to JSON. ${error}`;
     }
   }
 }
