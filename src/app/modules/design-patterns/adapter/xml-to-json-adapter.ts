@@ -1,8 +1,6 @@
 import { xml2json } from 'xml-js';
 
-import { IAdapter } from './adapter';
-
-export class XMLtoJsonAdapter implements IAdapter {
+export class XMLtoJsonAdapter {
   constructor(private readonly xml: string) {}
 
   // TODO: Add return type
